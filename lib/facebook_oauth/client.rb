@@ -23,7 +23,7 @@ module FacebookOAuth
       @access_token ||= client.auth_code.get_token(
         options[:code],
         :redirect_uri => options[:callback] || @callback,
-        :parse => :query
+        :parse => :json
       )
       
       @token = @access_token.token
